@@ -70,6 +70,341 @@
 
 
 
+== What does it do?
+
+```java
+public int activeUserCountSince(Date date) {
+	int activeUserCount = 0;
+	// loop through the users
+	for (User user : users)
+		// check whether user logged in
+		if (user.loggedInSince(date))
+			// increase activeUserCount
+			activeUserCount++;
+	return activeUserCount;
+}
+```
+
+=== Narrations
+
+Usually inline comments.
+
+* explain what the code does
+* exist on a very technical level
+
+=== Analysis
+
+Actuality::
+* very high
+* need to be absolutely up to date!
+Location::
+* right in the narrated line(s)
+Alternatives::
+* good names
+* transparent design
+* well-known patterns
+
+=== Costs
+
+* *composition*: medium
+* *maintenance*: high
+* *confusion*: high risk
+* *obstruction*: yes, can't be hidden
+
+=== Benefits
+
+* *explain what happens*: yes
+* *keep abstractions intact*: no
+* *top down over bottom up*: no
+* *documenting intent*: a little
+
+=== Verdict
+
+> Narrations suck!
+
+&nbsp;
+
+With one exception:
+
+* arcane language features are used
+* there is no alternative
+* there is no way to improve readability
+
+
+
+== What Does It Promise?
+
+++++
+<div style="height: 550px;">
+<div class="listingblock fragment current-display"><div class="content"><pre class="highlight"><code class="java language-java hljs">public interface Map&lt;K, V&gt; {
+	/**
+	 * ...............................
+	 * ................................
+	 * ....................................
+	 * ....................................
+	 *
+	 * @return .......................
+	 *         ....................
+	 */
+	int size();
+}</code></pre></div></div>
+<div class="listingblock fragment current-display"><div class="content"><pre class="highlight"><code class="java language-java hljs">public interface Map&lt;K, V&gt; {
+	/**
+	 * Returns the number of key-value
+	 * mappings in this map. ..........
+	 * ....................................
+	 * ....................................
+	 *
+	 * @return the number of key-value
+	 *         mappings in this map
+	 */
+	int size();
+}</code></pre></div></div>
+<div class="listingblock fragment current-display"><div class="content"><pre class="highlight"><code class="java language-java hljs">public interface Map&lt;K, V&gt; {
+	/**
+	 * Returns the number of key-value
+	 * mappings in this map. If the map
+	 * contains more than Integer.MAX_VALUE
+	 * elements, returns Integer.MAX_VALUE.
+	 *
+	 * @return the number of key-value
+	 *         mappings in this map
+	 */
+	int size();
+}</code></pre></div></div>
+</div>
+++++
+
+
+=== Contract Comments
+
+(or just _Contracts_)
+
+Usually JavaDoc on classes and methods.
+
+They define
+
+* the code's central abstraction
+* pre- and postconditions
+* quirks
+
+[NOTE.speaker]
+--
+* highlight "define" (not "describe")
+* they make a promise
+--
+
+
+=== Analysis
+
+Actuality::
+* high
+Location::
+* right in the class or method
+Alternatives::
+* good names
+* tests
+
+=== Costs
+
+* *composition*: high
+* *maintenance*: considerable
+* *confusion*: high risk
+* *obstruction*:
+** can be hidden
+** and viewed on demand
+
+=== Benefits
+
+* *explain what happens*: yes
+* *keep abstractions intact*: yes
+* *top down over bottom up*: to a degree
+* *documenting intent*: no
+
+=== Verdict
+
+> It's complicated.
+
+&nbsp;
+
+* costs are high if code changes often
+* benefits are high if code is read often
+
+~> The more stable & resued the code, +
+the more detailed the documentation!
+
+[NOTE.speaker]
+--
+* "resused" often implies "stable" by necessity
+* good documentation improves discoverability and adoption
+--
+
+
+
+== How does it work?
+
+++++
+<div style="height: 550px;">
+<div class="listingblock fragment current-display"><div class="content"><pre class="highlight"><code class="java language-java hljs">/**
+ * When keys are Comparable, this class may
+ * use comparison order among keys to help
+ * break ties.
+ */
+public class HashMap&lt;K, V&gt; { }</code></pre></div></div>
+<div class="listingblock fragment current-display"><div class="content"><pre class="highlight"><code class="java language-java hljs">/**
+ * When keys are Comparable, this class may
+ * use comparison order among keys to help
+ * break ties.
+ */
+public class HashMap&lt;K, V&gt; {
+	/* This map usually acts as a binned
+	 * (bucketed) hash table, but when bins
+	 * get too large, they are transformed
+	 * into bins of TreeNodes, each
+	 * structured similarly to those in
+     * java.util.TreeMap. */
+}</code></pre></div></div>
+</div>
+++++
+
+[NOTE.speaker]
+--
+* another example: a class explaining that a factory is required
+--
+
+=== Technical Context
+
+Often non-Javadoc blocks +
+at the beginning of a class/method.
+
+(Check out
+http://blog.codefx.org/java/new-javadoc-tags/[`@apiNote` and `@implNote`].)
+
+* clarify what code is _for_
+* when to use it and when not
+
+(This is *not* a contract!)
+
+[NOTE.speaker]
+--
+* can even give examples
+* contracts make a promise, context comments explain why it was made
+--
+
+=== Analysis
+
+Actuality::
+* not that important
+Location::
+* not that important
+Alternatives::
+* demos
+* existing code +
+(to a limited extend)
+
+=== Costs
+
+* *composition*: moderate
+* *maintenance*: not so much
+* *confusion*: possible
+* *obstruction*:
+** can be hidden
+** and viewed on demand
+
+=== Benefits
+
+* *explain what happens*: somewhat
+* *keep abstractions intact*: a little
+* *top down over bottom up*: to a degree
+* *documenting intent*: yes
+
+=== Verdict
+
+> A clear winner!
+
+&nbsp;
+
+* costs are moderate
+* benefits are considerable
+
+[NOTE.speaker]
+--
+* avoid confusion with contracts
+--
+
+
+
+== OMG, why?!
+
+++++
+<div style="height: 550px;">
+<div class="listingblock fragment current-display"><div class="content"><pre class="highlight"><code class="java language-java hljs">public Color randomFavoriteColor() {
+	while (true)
+		Color favorite = randomColor();
+		if (isNotWhiteish(favorite))
+			return favorite;
+}</code></pre></div></div>
+<div class="listingblock fragment current-display"><div class="content"><pre class="highlight"><code class="java language-java hljs">public Color randomFavoriteColor() {
+	while (true)
+		Color favorite = randomColor();
+		// In China white is often seen
+		// as a color of mourning and
+		// some Chinese users did not
+		// like it. We hence disallow
+		// whitish colors as favorites.
+		// For details see issue #1534.
+		if (isNotWhitish(favorite))
+			return favorite;
+}</code></pre></div></div>
+</div>
+++++
+
+[NOTE.speaker]
+--
+
+--
+
+=== Historical Context
+
+* clarifies why (oh why!) +
+code looks the way it does
+* can document paths not taken
+
+=== Analysis
+
+Actuality::
+* negligible
+Location::
+* not that important
+Alternatives::
+* commit messages
+* issues, wikis
+
+=== Costs
+
+* *composition*: moderate
+* *maintenance*: negligible
+* *confusion*: low
+* *obstruction*: yes
+
+=== Benefits
+
+* *explain what happens*: somewhat
+* *keep abstractions intact*: no
+* *top down over bottom up*: no
+* *documenting intent*: yes
+
+=== Verdict
+
+> Even better!
+
+&nbsp;
+
+* costs are negligible
+* benefits are considerable
+
+These are great breadcrumbs +
+when tracking down bugs
 
 
 [data-background="images/question-mark.jpg"]
