@@ -104,6 +104,7 @@ Alternatives::
 * transparent design
 * well-known patterns
 
+
 === Costs
 
 * *composition*: medium
@@ -111,12 +112,14 @@ Alternatives::
 * *confusion*: high risk
 * *obstruction*: yes, can't be hidden
 
+
 === Benefits
 
 * *explain what happens*: yes
 * *keep abstractions intact*: no
 * *top down over bottom up*: no
 * *documenting intent*: a little
+
 
 === Verdict
 
@@ -214,12 +217,14 @@ Alternatives::
 ** can be hidden
 ** and viewed on demand
 
+
 === Benefits
 
 * *explain what happens*: yes
 * *keep abstractions intact*: yes
 * *top down over bottom up*: to a degree
 * *documenting intent*: no
+
 
 === Verdict
 
@@ -272,6 +277,7 @@ public class HashMap&lt;K, V&gt; {
 * another example: a class explaining that a factory is required
 --
 
+
 === Technical Context
 
 Often non-Javadoc blocks +
@@ -290,6 +296,7 @@ http://blog.codefx.org/java/new-javadoc-tags/[`@apiNote` and `@implNote`].)
 * can even give examples
 * contracts make a promise, context comments explain why it was made
 --
+
 
 === Analysis
 
@@ -311,12 +318,14 @@ Alternatives::
 ** can be hidden
 ** and viewed on demand
 
+
 === Benefits
 
 * *explain what happens*: somewhat
 * *keep abstractions intact*: a little
 * *top down over bottom up*: to a degree
 * *documenting intent*: yes
+
 
 === Verdict
 
@@ -364,11 +373,13 @@ Alternatives::
 
 --
 
+
 === Historical Context
 
 * clarifies why (oh why!) +
 code looks the way it does
 * can document paths not taken
+
 
 === Analysis
 
@@ -380,6 +391,7 @@ Alternatives::
 * commit messages
 * issues, wikis
 
+
 === Costs
 
 * *composition*: moderate
@@ -387,12 +399,14 @@ Alternatives::
 * *confusion*: low
 * *obstruction*: yes
 
+
 === Benefits
 
 * *explain what happens*: somewhat
 * *keep abstractions intact*: no
 * *top down over bottom up*: no
 * *documenting intent*: yes
+
 
 === Verdict
 
