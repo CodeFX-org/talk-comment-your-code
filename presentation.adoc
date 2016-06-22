@@ -85,12 +85,14 @@ public int activeUserCountSince(Date date) {
 }
 ```
 
+
 === Narrations
 
 Usually inline comments.
 
 * explain what the code does
-* exist on a very technical level
+* speak on a very technical level
+
 
 === Analysis
 
@@ -205,8 +207,9 @@ Actuality::
 Location::
 * right in the class or method
 Alternatives::
-* good names
-* tests
+* good names (limited)
+* tests (limited)
+
 
 === Costs
 
@@ -235,8 +238,8 @@ Alternatives::
 * costs are high if code changes often
 * benefits are high if code is read often
 
-~> The more stable & resued the code, +
-the more detailed the documentation!
+⇝ The more stable & reused the code, +
+the better the outcome!
 
 [NOTE.speaker]
 --
@@ -306,8 +309,8 @@ Location::
 * not that important
 Alternatives::
 * demos
-* existing code +
-(to a limited extend)
+* existing code (limited)
+
 
 === Costs
 
@@ -418,7 +421,8 @@ Alternatives::
 * benefits are considerable
 
 These are great breadcrumbs +
-when tracking down bugs
+when tracking down bugs!
+
 
 
 [data-background="images/question-mark.jpg"]
