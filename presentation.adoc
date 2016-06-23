@@ -169,6 +169,190 @@ Then update the comments, too!
 === !
 
 
+
+== The Costs Of Comments
+
+or
+
++++<h2>Why Everybody Hates Comments</h2>+++
+
+
+=== Initial Composition
+
+Writing a comment is harder...
+
+* ... the later it is done
+* ... the more complex the code is
+* ... the more precise the comment is
+
+Usually affordable +
+compared to writing code and tests.
+
+[NOTE.speaker]
+--
+* cost is capped when abstraction works well
+--
+
+
+=== Maintenance
+
+What do to with comments +
+when code changes?
+
+* updating ⇝ takes time
+* leaving unchanged ⇝ causes confusion
+* deletion ⇝ wastes past efforts
+
+Whatever schema you decide on +
+*maintenance is critical*!
+
+
+=== Maintenance
+
+* *changing* comments takes little time
+* but *finding* them can be hard
+
+⇝ Comments and code must be close!
+
+[NOTE.speaker]
+--
+* pesky, time-consuming, error-prone
+--
+
+
+=== Confusion
+
+Comments that are
+
+* outdated
+* ambiguous
+* lacking detail
+
+cause confusion!
+
+
+=== Confusion
+
+Costs are unpredictable +
+but potentially enormous!
+
+Deteriorates trust in comments.
+
+[NOTE.speaker]
+--
+* good coding techniques reduce risk
+--
+
+
+=== Obstruction
+
+Takes up screen space.
+
+(Fold that shit!)
+
+
+=== Why Everybody _Really_ Hates Comments
+
+* they may be hard to write
+* they turn nothing green
+* nobody gets a pat on the back +
+for a clever comment
+
+++++
+<p class="fragment current-visible">Get over it!</p>
+++++
+
+
+
+== The Benefits Of Comments
+
+Small note: +
+Benefits suffer from diminishing returns.
+
+
+=== Explain What Happens
+
+Duh!
+
+* intrinsically redundant
+* can cause confusion
+
+Might be necessary +
+for arcane language features.
+
+
+=== Keep Abstractions Intact
+
+Every unit of code provides an abstraction.
+
+* do one thing and to it well
+* hide how it does it
+* should not require  us +
+to look past the abstraction
+
+The core to modularizing any non-trivial problem!
+
+
+=== Keep Abstractions Intact
+
+Abstractions provide two benefits:
+
+* reuse code
+* reuse understanding
+
+Comments can help with both!
+
+[NOTE.speaker]
+--
+* abstractions lose value if I have to step into them
+* tests, clean code, ... only shines then
+* you have to build a new context
+--
+
+
+=== Top Down vs Bottom Up
+
+* most people learn better top down
+* clean code, tests, ... +
+are a bottom up approach
+
+Comments can be *signposts*, +
+helping to stay on +
+the right *level of abstraction*.
+
+
+[NOTE.speaker]
+--
+* similar to keeping abstractions intact
+--
+
+
+=== Document Intent
+
+Context is invaluable when revisiting code!
+
+* why?
+* no seriously, WHY?
+* why the &*☠#?!
+
+
+=== Document Intent
+
+* other tools contain this info
+* working through them takes time
+* and is transient!
+
+Comments can be 2nd line of defense.
+
+
+=== Spur Redesign
+
+> It’s funny how writing documentation can spur redesign:
+it’s easier to simplify a complex API than try to document it completely.
+
+(Mike Bostok https://twitter.com/mbostock/status/681561150127878144[on Twitter].)
+
+
 == Looking Closer...
 
 * actuality
