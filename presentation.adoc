@@ -428,7 +428,7 @@ Actuality::
 * very high
 * need to be absolutely up to date!
 Location::
-* right in the narrated line(s)
+* right on the narrated line(s)
 Alternatives::
 * good names
 * transparent design
@@ -533,7 +533,7 @@ They define
 Actuality::
 * high
 Location::
-* right in the class or method
+* right on the class or method
 Alternatives::
 * good names (limited)
 * tests (limited)
@@ -619,6 +619,7 @@ http://blog.codefx.org/java/new-javadoc-tags/[`@apiNote` and `@implNote`].)
 
 * clarify what code is _for_
 * when to use it and when not
+* explain implementation details
 
 (This is *not* a contract!)
 
@@ -707,7 +708,7 @@ Alternatives::
 
 === Historical Context
 
-* clarifies why (oh why!) +
+* clarifies why (oh why?) +
 code looks the way it does
 * can document paths not taken
 
@@ -728,7 +729,9 @@ Alternatives::
 * *composition*: moderate
 * *maintenance*: negligible
 * *confusion*: low
-* *obstruction*: yes
+* *obstruction*:
+** can be hidden
+** and viewed on demand
 
 
 === Benefits
@@ -767,6 +770,23 @@ Instead
 
 === Clean Comments
 
+For individual comments:
+
+* make obvious which kind they are
+* put yourself in your reader's mind
+* strive for high locality
+* get them reviewed
+
+[NOTE.speaker]
+--
+* use phrases like "at the time of writing"
+* use @apiNote, @implNote
+* use different styles: /** vs /* vs //
+--
+
+
+=== Clean Comments
+
 This is my proposal:
 
 * avoid _narrations_ whenever possible
@@ -774,9 +794,6 @@ This is my proposal:
 a class's central abstraction
 * add _contracts_ to reused APIs
 * provide as much _context_ as possible
-
-It must be obvious +
-into which category a comment belongs!
 
 
 === Clean Comments
@@ -801,7 +818,7 @@ speak *freely* about comments
 * go through the code base and +
 *discuss* concrete examples
 * settle on a *shared approach* and +
-include it in your team's style guide
+include it in your style guide
 * use pair programming or code reviews +
 to *adapt and enforce*
 
@@ -828,6 +845,10 @@ until 2010: CS and Math at http://www.tu-dortmund.de[TU Dortmund]
 
 
 == Image Credits
+
+* 12-months:
+https://www.flickr.com/photos/79244980@N04/[holytimeland]
+(https://creativecommons.org/licenses/by-sa/2.0/[CC-BY-SA 2.0])
 
 * question-mark:
 http://milosevicmilos.com/[Milos Milosevic]
