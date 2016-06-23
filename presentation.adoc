@@ -7,10 +7,8 @@
 :revealjs_progress: false
 :revealjs_transition: slide
 :revealjs_backgroundTransition: fade
-:revealjs_parallaxBackgroundImage:
-:revealjs_parallaxBackgroundSize:
-
-[[TODO, create Devoxx-styled title slide, add slide asking to vote with MyDevoxx]]
+:revealjs_parallaxBackgroundImage: images/12-months.png
+:revealjs_parallaxBackgroundSize: 4608px 3456px
 
 ++++
 <div class="event">
