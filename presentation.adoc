@@ -66,6 +66,12 @@
 </script>
 ++++
 
+[[TODO, Include http://commadot.com/wp-content/uploads/2009/02/wtf.png::[this] and mark one WTF on each side as "prevented by comments", meaning clean code gets much better but bad code still sucks]]
+[[TODO, reference external standards]]
+[[TODO, pick some of these http://stackoverflow.com/q/184618]]
+[[TODO, find the quote about the psycho knowing where you live]]
+[[TODO, stress that clean code is great and you should use it; just add comments later]]
+
 [data-background="images/all_code_and_no_comments.png"]
 [data-state="empty"]
 == !
